@@ -1,3 +1,30 @@
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+
+function showMenu() {
+   
+
+    if(navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active')
+            if (window.innerWidth < 840) {
+            navLinks.style.display = "none"
+            }
+    } else {
+        navLinks.style.display = "flex"
+        navLinks.classList.add('active')
+    }
+}
+   
+
+window.addEventListener('resize', function() {
+    if (window.innerWidth >= 840) {
+        navLinks.classList.remove('active')
+        navLinks.style.display = "flex"
+    } else {
+        navLinks.style.display = "none"
+    }
+})
+
 const sportsCarCheckBox = document.getElementById("sportsCar");
 const allCheckBox = document.getElementById("all");
 const carsCheckBox = document.getElementById("cars");
