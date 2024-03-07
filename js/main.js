@@ -61,6 +61,30 @@ function displayVehicles() {
     }
 }
 
+function removeAllCheckBox() {
+    const check = document.getElementsByClassName("check");
+    let counter = 0;
+    for (let i = 0; i < check.length; i++) {
+        if (check[i].checked) {
+            counter++
+        }
+    }
+
+    if (counter == 1) {
+        allCheckBox.checked = false;
+    } else if (counter > 1) {
+        allCheckBox.checked = false
+    } else {
+        allCheckBox.checked = true
+    }
+}
+
+allCheckBox.addEventListener('click', () => {
+    sportsCarCheckBox.checked = false
+    carsCheckBox.checked = false
+    suvCheckBox.checked = false
+})
+
 // Add event listeners to checkboxes
 sportsCarCheckBox.addEventListener('change', displayVehicles);
 carsCheckBox.addEventListener('change', displayVehicles);
